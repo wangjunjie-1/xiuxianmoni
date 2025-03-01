@@ -1,5 +1,6 @@
 # main.py
-from ui.cli_ui import CLIUI
+import tkinter as tk
+from ui.tk_ui import TkUI
 from config import GAME_NAME, GAME_VERSION
 import logging
 from utils.logger import log_info
@@ -15,9 +16,10 @@ def main():
     # 初始化游戏
     initialize_game()
 
-    # 启动命令行界面
-    cli_ui = CLIUI()
-    cli_ui.run()
+    # 启动 Tkinter 界面
+    root = tk.Tk()
+    app = TkUI(root)
+    root.mainloop()
 
 if __name__ == "__main__":
     # 配置日志
